@@ -37,8 +37,10 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text("Gasolina x Alcool"),
-            const SizedBox(
+            SizedBox(
               height: 200, // Altura desejada da imagem
+              child: Image.network(
+                  "https://media.istockphoto.com/vectors/stream-of-gold-coins-pours-from-the-fuel-handle-pump-nozzle-with-hose-vector-id1251678227?k=20&m=1251678227&s=612x612&w=0&h=WueKOjZwKgOk0wRBcj9zhL7Bli9N4Vy3vs8NcDJHwBA="),
             ),
             const SizedBox(
               height: 16,
@@ -72,9 +74,16 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 16,
             ),
-            OutlinedButton(
+            ElevatedButton(
               onPressed: calcular,
-              child: const Text("Calcular"),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors
+                    .cyanAccent), // Change Colors.blue to your desired color
+              ),
+              child: const Text(
+                "Calcular",
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             Text("Resultado: $_resultado"),
             const SizedBox(
